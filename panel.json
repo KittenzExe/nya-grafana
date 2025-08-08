@@ -1,0 +1,26 @@
+{
+  "id": 39,
+  "type": "text",
+  "title": "Nya image",
+  "description": "",
+  "gridPos": {
+    "x": 0,
+    "y": 0,
+    "h": 10,
+    "w": 5
+  },
+  "fieldConfig": {
+    "defaults": {},
+    "overrides": []
+  },
+  "pluginVersion": "12.2.0-16818804881",
+  "options": {
+    "mode": "html",
+    "code": {
+      "language": "plaintext",
+      "showLineNumbers": false,
+      "showMiniMap": false
+    },
+    "content": "<!-- Created by KittenzExe -->\n<!-- https://github.com/KittenzExe/nya-grafana -->\n\n<button id=\"nya\">nya~</button>\n<img id=\"nyaimage\" src=\"\" alt=\"nya~\" style=\"max-width: 300px; max-height: 300px;\" />\n\n<script>\n  document.getElementById('nya').addEventListener('click', async () => {\n    const imgElem = document.getElementById('nyaimage');\n    try {\n      const response = await fetch('https://api.waifu.pics/sfw/waifu'); // Change the api url to your desire\n      const data = await response.json();\n      imgElem.src = data.url;\n      imgElem.style.display = 'block';\n    } catch (e) {\n      imgElem.style.display = 'none';\n    }\n  });\n</script>\n"
+  }
+}

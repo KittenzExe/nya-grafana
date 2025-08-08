@@ -1,0 +1,19 @@
+<!-- Created by KittenzExe -->
+<!-- https://github.com/KittenzExe/nya-grafana -->
+
+<button id="nya">nya~</button>
+<img id="nyaimage" src="" alt="nya~" style="max-width: 300px; max-height: 300px;" />
+
+<script>
+  document.getElementById('nya').addEventListener('click', async () => {
+    const imgElem = document.getElementById('nyaimage');
+    try {
+      const response = await fetch('https://api.waifu.pics/sfw/waifu'); // Change the api url to your desire
+      const data = await response.json();
+      imgElem.src = data.url;
+      imgElem.style.display = 'block';
+    } catch (e) {
+      imgElem.style.display = 'none';
+    }
+  });
+</script>
